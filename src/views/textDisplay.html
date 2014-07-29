@@ -1,11 +1,18 @@
-<html ng-app="myApp">
-<body ng-controller="TextController">
-<p>{{someText.message}}</p>
+<html ng-app>
+<body>
+<p ng-bind="someText.message"></p>
 
 <script type="text/javascript"
         src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.js"></script>
-<script src="/AngularLearner/src/controllers/textController.js"></script>
+<script src="/AngularLearner/src/controllers/someController.js"></script>
 
+<form ng-controller="SomeController">
+    Starting:
+    <input ng-model="funding.startingEstimate"/>
+    Recommendation:
+    {{funding.needed}}
+
+</form>
 
 </body>
 </html>
