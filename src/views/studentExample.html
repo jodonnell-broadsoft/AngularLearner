@@ -1,0 +1,16 @@
+<html ng-app>
+<head>
+    <title>Your Shopping Cart</title>
+    <script type="text/javascript"
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.js"></script>
+    <script src="/AngularLearner/src/controllers/studentController.js"></script>
+</head>
+<body ng-controller="StudentController">
+    <ul>
+        <li ng-repeat="student in students">
+            <a href="/student/view/{{student.id}}">{{student.name}}</a>
+        </li>
+    </ul>
+    <button ng-click="insertTom()">InsertTom</button>
+</body>
+</html>
