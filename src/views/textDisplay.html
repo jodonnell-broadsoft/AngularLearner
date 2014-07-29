@@ -6,11 +6,12 @@
         src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.js"></script>
 <script src="/AngularLearner/src/controllers/someController.js"></script>
 
-<form ng-controller="SomeController">
+<form ng-submit="requestFunding()" ng-controller="SomeController">
     Starting:
-    <input ng-model="funding.startingEstimate"/>
+    <input ng-change="computeNeeded()" ng-model="funding.startingEstimate"/>
     Recommendation:
     {{funding.needed}}
+    <button>Fund my startup!</button>
 
 </form>
 
