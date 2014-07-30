@@ -1,11 +1,10 @@
-function CartController($scope) {
+var app = angular.module('myApp', []);
+
+function CartController($scope, Items) {
     $scope.bill = {};
 
-    $scope.items = [
-        {title: 'Paint pots', quantity: 8, price: 3.26},
-        {title: 'Paint', quantity: 10, price: 4.33},
-        {title: 'Candy', quantity: 12, price: 7.22}
-    ];
+    $scope.items = Items;
+  console.log(Items);
 
     $scope.$watch(function(){ //monitors any change
         console.log('here');
@@ -19,3 +18,15 @@ function CartController($scope) {
         $scope.bill.subtotal = total - $scope.bill.discount;
     });
 }
+
+app.factory('Items', function() {
+  var items = {};
+  items.query = function() {
+    // In real apps, we'd pull this data from the server...
+    return [
+      {title: 'Paint pots', description: 'Pots full of paint', price: 3.95},
+      {title: 'Polka dots', description: 'Dots with polka', price: 2.95},
+      {title: 'Pebbles', description: 'Just little rocks', price: 6.95}
+    ]; };
+  return items;
+});

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="myApp">
 <head>
     <title>Your Shopping Cart</title>
     <script type="text/javascript"
@@ -9,14 +9,12 @@
 
 
 <body ng-controller="CartController">
-    <div ng-repeat="item in items">
-        <span>{{item.title}}</span>
-        <input ng-model="item.quantity"/>
-        <span>{{item.price | currency}}</span>
-        <span>{{item.price * item.quantity | currency}}</span>
-    </div>
-    <div>Total: {{bill.total | currency}}</div>
-    <div>Discount: {{bill.discount | currency}}</div>
-    <div>Subtotal: {{bill.subtotal | currency}}</div>
+    <h1>Shop!</h1>
+    <table>
+        <td>{{item.title}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.price | currency}}</td>
+        </tr>
+    </table>
 </body>
 </html>
